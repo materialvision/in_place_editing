@@ -1,0 +1,24 @@
+InPlaceEditing with acts_as_textiled support (based on Juan E. Bernabo)
+and added options for colours when hovering
+Works well with git://github.com/lawrencepit/acts_as_textiled.git
+============================================
+
+Example:
+
+  # Model
+  class Post < ActiveRecord::Base
+    acts_as_textiled :body
+  end
+
+  # Controller
+  class BlogController < ApplicationController
+    in_place_edit_for :post, :body
+  end
+
+  # View
+  <%= in_place_editor_field :post, 'body', {}, :highlight_color => '#d2fdf1', :highlightend_color => '#dcffe9' %>
+
+Copyright (c) 2007 David Heinemeier Hansson, released under the MIT license  
+Copyright (c) 2009 Juan Esteban Bernabó
+Copyright (c) 2009 Espen Sommer Eide
+
